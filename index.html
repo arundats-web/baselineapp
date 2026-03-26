@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Baseline</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #1A2E44;
+    --court: #4A7C59;
+    --ball: #C8D926;
+    --clay: #D4622A;
+    --bg: #F7F5F0;
+    --text: #1A2E44;
+    --muted: #6B7A8D;
+    --border: rgba(26,46,68,0.1);
+  }
+
+  html { font-size: 16px; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  /* Header */
+  header {
+    background: var(--navy);
+    padding: 0 24px;
+  }
+
+  .header-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 32px 0 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .logo-mark {
+    width: 36px;
+    height: 36px;
+    background: white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    color: var(--navy);
+    line-height: 1;
+    padding-bottom: 2px;
+  }
+
+  .logo-text {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    color: white;
+    letter-spacing: 0.02em;
+  }
+
+  .header-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(32px, 6vw, 48px);
+    color: white;
+    line-height: 1.15;
+    font-weight: 400;
+  }
+
+  .header-meta {
+    font-size: 13px;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  /* Court line accent */
+  .accent-line {
+    height: 3px;
+    background: var(--court);
+    width: 48px;
+    border-radius: 2px;
+    margin-top: 4px;
+  }
+
+  /* Main content */
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 24px 80px;
+  }
+
+  .intro {
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--text);
+    margin-bottom: 56px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .intro strong {
+    font-weight: 500;
+    color: var(--court);
+  }
+
+  /* Sections */
+  .section {
+    margin-bottom: 48px;
+  }
+
+  .section-number {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--court);
+    margin-bottom: 8px;
+  }
+
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--navy);
+    margin-bottom: 16px;
+    line-height: 1.3;
+  }
+
+  .section-body {
+    font-size: 15px;
+    color: #3D4F5E;
+    line-height: 1.8;
+  }
+
+  .section-body a {
+    color: var(--court);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(74,124,89,0.3);
+    transition: border-color 0.2s;
+  }
+
+  .section-body a:hover {
+    border-color: var(--court);
+  }
+
+  /* Divider */
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 48px 0;
+  }
+
+  /* Contact card */
+  .contact-card {
+    background: var(--navy);
+    border-radius: 16px;
+    padding: 32px;
+    margin-top: 56px;
+  }
+
+  .contact-card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 10px;
+  }
+
+  .contact-card p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--court);
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    transition: opacity 0.2s;
+  }
+
+  .contact-link:hover { opacity: 0.85; }
+
+  /* Footer */
+  footer {
+    background: var(--navy);
+    padding: 24px;
+    text-align: center;
+  }
+
+  footer p {
+    font-size: 12px;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.04em;
+  }
+
+  /* Ball dot */
+  .ball-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: var(--ball);
+    border-radius: 50%;
+    margin-left: 2px;
+    vertical-align: middle;
+  }
+
+  @media (max-width: 600px) {
+    .header-inner { padding: 24px 0 32px; }
+    main { padding: 40px 20px 60px; }
+    .contact-card { padding: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <div class="logo-mark">B</div>
+      <span class="logo-text">Baseline</span>
+    </div>
+    <div>
+      <p class="header-meta">Legal</p>
+      <h1 class="header-title">Privacy Policy</h1>
+      <div class="accent-line"></div>
+    </div>
+    <p class="header-meta">Last updated — March 2026</p>
+  </div>
+</header>
+
+<main>
+
+  <p class="intro">
+    Baseline is built for tennis players who care about their game. We take your privacy seriously and collect <strong>only what's needed</strong> to make the app work. This policy explains what we collect, how we use it, and what rights you have over your data.
+  </p>
+
+  <div class="section">
+    <p class="section-number">01</p>
+    <h2 class="section-title">What we collect</h2>
+    <p class="section-body">
+      Baseline collects your email address for account creation, match data you log (scores, points, debrief answers), and session descriptions you provide for analysis. When you use voice input, audio recordings are processed to generate text transcriptions. We do not collect location data, contacts, or any information beyond what you explicitly provide through the app.
+    </p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <p class="section-number">02</p>
+    <h2 class="section-title">How we use it</h2>
+    <p class="section-body">
+      Your data is used solely to provide the Baseline service — generating match reports, pressure analysis, trends, and AI coach insights. We do not sell your data, share it with third parties for advertising, or use it for any purpose other than operating the app and improving your experience within it.
+    </p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <p class="section-number">03</p>
+    <h2 class="section-title">AI processing</h2>
+    <p class="section-body">
+      Match descriptions and voice recordings are processed by Anthropic (Claude) and OpenAI (Whisper) to generate insights and transcriptions. These services process your data to return a response and do not retain it for model training purposes. All AI requests are routed through our secure server — your API keys and personal data are never exposed to third parties directly. For more information, see <a href="https://www.anthropic.com/privacy" target="_blank">anthropic.com/privacy</a> and <a href="https://openai.com/policies/privacy-policy" target="_blank">openai.com/privacy</a>.
+    </p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <p class="section-number">04</p>
+    <h2 class="section-title">Data storage</h2>
+    <p class="section-body">
+      Your match data is stored securely using Supabase, a managed database platform with encryption at rest and in transit. Data is stored in data centres with industry-standard physical and technical security measures. You can delete your account and all associated data at any time directly from the Profile screen within the app.
+    </p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <p class="section-number">05</p>
+    <h2 class="section-title">Your rights</h2>
+    <p class="section-body">
+      You have the right to access, export, correct, or delete all of your personal data at any time. You can delete your account and all data directly from the app under Profile → Delete Account. For any other data requests, contact us at <a href="mailto:privacy@baselineapp.in">privacy@baselineapp.in</a> and we will action your request within 30 days.
+    </p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <p class="section-number">06</p>
+    <h2 class="section-title">Children</h2>
+    <p class="section-body">
+      Baseline is intended for users aged 13 and older. We do not knowingly collect personal information from children under 13. If you believe a child has provided us with personal information, please contact us immediately and we will delete it.
+    </p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <p class="section-number">07</p>
+    <h2 class="section-title">Changes to this policy</h2>
+    <p class="section-body">
+      We may update this privacy policy from time to time. When we do, we will update the date at the top of this page. Continued use of the app after changes constitutes acceptance of the updated policy. For significant changes, we will notify users through the app.
+    </p>
+  </div>
+
+  <div class="contact-card">
+    <h3>Questions about your privacy<span class="ball-dot"></span></h3>
+    <p>If you have any questions about this policy or want to make a data request, get in touch. We'll respond within 2 business days.</p>
+    <a href="mailto:privacy@baselineapp.in" class="contact-link">
+      privacy@baselineapp.in →
+    </a>
+  </div>
+
+</main>
+
+<footer>
+  <p>© 2026 Baseline · Own your Game · All rights reserved</p>
+</footer>
+
+</body>
+</html>
