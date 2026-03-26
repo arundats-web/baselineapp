@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delete Account — Baseline</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #1A2E44;
+    --court: #4A7C59;
+    --ball: #C8D926;
+    --clay: #D4622A;
+    --bg: #F7F5F0;
+    --text: #1A2E44;
+    --muted: #6B7A8D;
+    --border: rgba(26,46,68,0.1);
+  }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+  header {
+    background: var(--navy);
+    padding: 0 24px;
+  }
+  .header-inner {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 32px 0 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .logo-mark {
+    width: 36px;
+    height: 36px;
+    background: white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    color: var(--navy);
+    line-height: 1;
+    padding-bottom: 2px;
+  }
+  .logo-text {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    color: white;
+  }
+  .header-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(28px, 5vw, 40px);
+    color: white;
+    line-height: 1.15;
+    font-weight: 400;
+  }
+  .accent-line {
+    height: 3px;
+    background: var(--clay);
+    width: 48px;
+    border-radius: 2px;
+    margin-top: 4px;
+  }
+  main {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+  .intro {
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--text);
+    margin-bottom: 40px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--border);
+  }
+  .method {
+    margin-bottom: 40px;
+  }
+  .method-number {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--court);
+    margin-bottom: 8px;
+  }
+  .method-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--navy);
+    margin-bottom: 12px;
+  }
+  .method-body {
+    font-size: 15px;
+    color: #3D4F5E;
+    line-height: 1.8;
+  }
+  .steps {
+    background: white;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    padding: 20px 24px;
+    margin-top: 16px;
+  }
+  .step {
+    display: flex;
+    gap: 14px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: flex-start;
+  }
+  .step:last-child { border-bottom: none; }
+  .step-num {
+    width: 24px;
+    height: 24px;
+    background: var(--navy);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 500;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .step-text {
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.6;
+  }
+  .step-text strong {
+    font-weight: 500;
+  }
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 40px 0;
+  }
+  .warning-box {
+    background: #FFF5F2;
+    border: 1px solid rgba(212,98,42,0.25);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-top: 16px;
+  }
+  .warning-box p {
+    font-size: 14px;
+    color: var(--clay);
+    line-height: 1.7;
+  }
+  .contact-card {
+    background: var(--navy);
+    border-radius: 16px;
+    padding: 32px;
+    margin-top: 48px;
+  }
+  .contact-card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 10px;
+  }
+  .contact-card p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--court);
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: opacity 0.2s;
+  }
+  .contact-link:hover { opacity: 0.85; }
+  footer {
+    background: var(--navy);
+    padding: 24px;
+    text-align: center;
+  }
+  footer p {
+    font-size: 12px;
+    color: rgba(255,255,255,0.3);
+  }
+  @media (max-width: 600px) {
+    main { padding: 32px 20px 60px; }
+    .contact-card { padding: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <div class="logo-mark">B</div>
+      <span class="logo-text">Baseline</span>
+    </div>
+    <div>
+      <h1 class="header-title">Delete your account</h1>
+      <div class="accent-line"></div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <p class="intro">
+    You can delete your Baseline account at any time. Deleting your account permanently removes all your match data, reports, AI coach insights, trends, and personal information from our servers. This action cannot be undone.
+  </p>
+
+  <div class="method">
+    <p class="method-number">Option 1 — Recommended</p>
+    <h2 class="method-title">Delete from within the app</h2>
+    <p class="method-body">The quickest way to delete your account is directly from the Baseline app.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text">Open the <strong>Baseline</strong> app on your phone</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text">Tap the <strong>Profile</strong> icon on the home screen</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text">Scroll down and tap <strong>Delete account</strong></div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-text">Confirm deletion when prompted — your account and all data will be permanently deleted immediately</div>
+      </div>
+    </div>
+    <div class="warning-box" style="margin-top:16px;">
+      <p>⚠️ This is permanent. All your matches, reports, trends and account information will be deleted and cannot be recovered.</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="method">
+    <p class="method-number">Option 2</p>
+    <h2 class="method-title">Request deletion by email</h2>
+    <p class="method-body">
+      If you no longer have access to the app or are unable to delete your account from within the app, you can request account deletion by emailing us. We will action your request within 30 days and confirm by email when complete.
+    </p>
+  </div>
+
+  <div class="contact-card">
+    <h3>Request account deletion</h3>
+    <p>Email us from the address associated with your Baseline account and we'll delete everything within 30 days.</p>
+    <a href="mailto:privacy@baselineapp.in?subject=Delete my Baseline account" class="contact-link">
+      privacy@baselineapp.in →
+    </a>
+  </div>
+
+</main>
+
+<footer>
+  <p>© 2026 Baseline · Own your Game · All rights reserved</p>
+</footer>
+
+</body>
+</html>
